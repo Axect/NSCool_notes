@@ -1,0 +1,114 @@
+# TOV Equation {#TOV}
+
+* TOV equation means **Tolman-Oppenheimer-Volkoff equation**.
+
+## Build Equation
+
+For static, non-rotating and spherical symmetric star, metric is given as
+$$ds^2 = -e^{2\Phi(r)}dt^2 + e^{2\Lambda(r)} dr^2 + r^2 d\Omega^2$$
+
+For isolated star, the metric must reduce to the Schwarzschild metric at outside of the star
+$$ds^2 = -\left(1 - \frac{2M}{r}\right) dt^2 + \frac{1}{1 - \frac{2M}{r}} dr^2 + r^2 d\Omega^2$$
+
+At interior of the star, let define new metric function for convenience
+$$e^{-2\Lambda(r)} = 1 - \frac{2m(r)}{r}$$
+
+The quantuty $m(r)$ can be interpreted as **the mass interior to radius $r$**.
+
+Now, consider perfect fluid matter:
+$$T_{\mu\nu} = (\rho + P)u_\mu u_\nu + Pg_{\mu\nu}, ~u = e^{-\Phi}\frac{\partial}{\partial t}$$
+
+Rewrite this to index-free notation:
+$$T = \rho^{2\Phi} dt^2 + \frac{P}{1 - \frac{2m(r)}{r}}dr^2 + Pr^2 d\Omega^2$$
+
+Solve Einstein equation with this metric & EM tensor then,
+\begin{align}
+    \frac{dm(r)}{dr} &= 4\pi r^2 \rho \\
+    \frac{d\Phi(r)}{dr} &= \frac{m(r) + 4\pi r^3 P}{r^2 \left(1 - \frac{2m(r)}{r}\right)}
+\end{align}
+
+From energy conservation, we can get one more equation:
+$$\nabla_\mu {T^\mu}_\nu = 0 \Rightarrow (\rho + P) \frac{d\Phi}{dr} + \frac{dP}{dr} = 0$$
+
+These three fundamental equations are called **Tolman-Oppenheimer-Volkoff Equations**
+
+------------------------------------------------------------------------
+**Tolman-Oppenheimer-Volkoff equation**
+
+$$\begin{aligned}
+\frac{dm}{dr} &= 4\pi r^2 \rho \\
+\frac{d\Phi}{dr} &= \frac{ m + 4\pi r^3 P}{r^2 (1 - \frac{2m}{r})} \\
+\frac{dP}{dr} &= - \frac{(\rho + P)(m + 4\pi r^3 P)}{r^2 (1 - \frac{2m}{r})}
+\end{aligned}$$
+------------------------------------------------------------------------
+
+&nbsp;
+
+Now, use polytropic equation of state.
+
+------------------------------------------------------------------------
+**Polytropic Equation of State**
+
+$$P = K \rho_0^\Gamma$$
+<br/>
+$P$: pressure <br/>
+$K$: polytropic gas constant <br/>
+$\rho_0$: rest mass density. for neutron star, $\rho_0 = m_u n_B$ <br/>
+$m_u$: nucleon mass with atomic mass unit<br/>
+$n_B$: baryonic number density<br/>
+$\rho = \rho_0(1 + \epsilon)$: total mass energy density<br/>
+$\epsilon$: internal energy density per unit mass<br/>
+$\Gamma \equiv 1 + \frac{1}{n}$<br/>
+$n$: polytropic index
+------------------------------------------------------------------------
+
+Thermodynamics process of neutron star is isentropic process.
+It means $S, N$ are conserved and only $V$ changes.
+First define densities as belows.
+$$s = \frac{S}{V},~ n = \frac{N}{V},~ \rho = \frac{U}{V}$$
+Since $dS = dN = 0$, we can get next relations.
+$$\frac{ds}{s} = \frac{dn}{n} = - \frac{dV}{V}$$
+Now, denote 1st law of thermodynamics.
+$$dU = -PdV + TdS + \mu dN = -PdV$$
+Rewrite this in terms of $\rho$, then we can get next relation.
+$$\frac{d\rho}{\rho + P} = - \frac{dV}{V}$$
+By above two relations, next equation is naturally given.
+$$\left(\rho + P\right) = n \frac{\partial \rho}{\partial n}$$
+Since, $\rho = \rho_0 (1+\epsilon),~ \rho_0 = m_u n$,
+$$\frac{\partial \rho}{\partial n} = \frac{\rho}{n} + \frac{\partial}{\partial n}\left(\frac{\rho}{n}\right) \cdot n$$
+Then finally we can obtain next equation.
+$$\therefore \, P = n^2 \frac{\partial}{\partial n} \left(\frac{\rho}{n}\right)$$
+
+Let substitute $P$ from polytropic EoS, then
+$$\rho = \rho_0 + \frac{P}{\Gamma-1}$$
+
+------------------------------------------------------------------------
+**Total Running Terms **
+
+$$\begin{aligned}
+\frac{dm}{dr} &= 4\pi r^2 \rho \\
+\frac{d\Phi}{dr} &= \frac{ m + 4\pi r^3 P}{r^2 (1 - \frac{2m}{r})} \\
+\frac{dP}{dr} &= - \frac{(\rho + P)(m + 4\pi r^3 P)}{r^2 (1 - \frac{2m}{r})} \\
+\frac{dN_B}{dr} &= \frac{4\pi r^2 n_B}{\sqrt{1 - \frac{2m}{r}}}
+\end{aligned}$$
+where <br/>
+$$\begin{gathered}
+\rho_0 = \left(\frac{P}{K}\right)^{\frac{1}{\Gamma}} \\
+\rho = \rho_0 + \frac{P}{\Gamma - 1} \\
+n_B = \frac{1}{m_u} \left(\frac{P}{K}\right)^{\frac{1}{\Gamma}}
+\end{gathered}$$
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+**Boundary Conditions**
+
+$$\begin{aligned}
+m(0) &= 0\\
+\Phi(0) &= 0\\
+\rho_0(0) &= \rho_c \\
+P(0) &= P_c = K\rho_c^{\Gamma}\\
+n_B(0) &= n_c = \frac{1}{m_u} \rho_c \\
+P(R) &= 0 \\
+\Phi(R) &= \frac{1}{2}\ln \left(1 - \frac{2GM}{R}\right)
+\end{aligned}$$
+------------------------------------------------------------------------
