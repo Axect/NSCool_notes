@@ -1,0 +1,7 @@
+# Energy Transport Equation {#energy_transport}
+
+## Ref 1
+
+Assuming that deformations with respect to the spherically-
+symmetric case due to rotation, magnetic field, and temperature
+distribution do not affect the metric in the interior of a NS.
